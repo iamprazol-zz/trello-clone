@@ -1,0 +1,59 @@
+.boardHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 45px;
+	color: white;
+	font-weight: bold;
+	padding: 8px 4px 4px 8px;
+}
+
+.boardHeaderCompany {
+	display: flex;
+	align-items: center;
+	flex: 0.8;
+}
+
+.boardHeaderDivider {
+	float: left;
+    border-left: 1px solid hsla(0,0%,100%,.5);
+    height: 24px;
+    margin: 8px 8px 12px 4px;
+}
+
+.boardHeaderCompany__left, .boardHeaderCompany__center, .boardHeaderCompany__right {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.memberAvatar {
+	display: flex;
+	align-items: center;
+}
+
+.inviteButton {
+	justify-content: flex-end;
+}
+
+.memberAvatar > .MuiAvatar-root {
+	height: 30px;
+	width: 30px;
+	margin-top: 2px;
+}
+
+.boardHeaderMenu {
+	display: flex;
+	flex: 0.2;
+	justify-content: flex-end;
+}
+
+.boardHeaderCompany__left > h3 {
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
+	font-weight: 500;
+	font-style: italic;
+	font-size: 22px;
+    line-height: 32px;
+	padding: 0 12px;
+}
+
