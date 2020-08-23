@@ -1,0 +1,25 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #026aa7;
+	height: 45px;
+	color: white;
+	font-weight: bold;
+}
+
+.header__left, .header__right {
+	display: flex;
+}
+
+.header__right > .MuiAvatar-root {
+	height: 35px;
+	width: 35px;
+	margin-right: 5px;
+}
+
+.header__center > h2 {
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
+	font-weight: 700;
+	font-style: italic;
+}
