@@ -1,0 +1,57 @@
+.listCard {
+	background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(9,30,66,.25);
+    cursor: pointer;
+    display: flex;
+    margin-bottom: 8px;
+    max-width: 300px;
+    min-height: 20px;
+    position: relative;
+    text-decoration: none;
+	z-index: 0;
+	flex-direction: column;
+}
+
+.listCardHeader{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	float: left;
+    font-size: 12px;
+    font-weight: 700;
+    height: 8px;
+    line-height: 100px;
+    margin: 4px 4px 4px 0;
+    max-width: 40px;
+    min-width: 40px;
+    padding: 0;
+    text-shadow: none;
+	width: auto;
+}
+
+.listCardBody > p {
+	clear: both;
+    display: block;
+    margin: 0 0 4px;
+    overflow: hidden;
+    text-decoration: none;
+    word-wrap: break-word;
+	color: #172b4d;
+	font-size: 15px;
+	padding: 10px 10px 10px 10px;
+}
+
+.listCardFooter {
+	display: flex;
+}
+
+.listCardFooter > .iconContainer > .MuiSvgIcon-root {
+	color: #172b4d;
+	font-size: 14px;
+}
+
+.listCardFooter > .iconContainer > h4 {
+	color: #172b4d;
+	font-size: 12px;
+}

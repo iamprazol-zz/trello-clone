@@ -5,3 +5,19 @@
 body {
 	background-color: #172b4d;
 }
+
+.boardBody {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	user-select: none;
+    white-space: nowrap;
+    margin-bottom: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 8px;
+}
+
+.boardBody:first-child {
+	margin-left: 8px;
+}

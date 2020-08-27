@@ -1,0 +1,64 @@
+.boardCard {
+	background-color: #ebecf0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+	white-space: normal;
+	width: 272px;
+	margin: 0 4px;
+}
+
+.boardCardHeader {
+	display: flex;
+	flex: 0 0 auto;
+    padding: 10px 8px;
+    position: relative;
+    min-height: 20px;
+}
+
+.boardCardHeader > h4 {
+	background: transparent;
+	flex: 0.8;
+}
+
+.boardCardHeader > .iconContainer {
+	flex: 0.2;
+	justify-content: flex-end;
+	padding: 0 0 0 2;
+}
+
+.boardCardHeader > .iconContainer > .MuiSvgIcon-root {
+	color: #6b778c;
+	font-size: 18px;
+}
+
+.boardCardFooter {
+	min-height: 38px;
+    max-height: 38px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.boardCardBody {
+	flex: 1 1 auto;
+    margin-bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0 4px;
+    padding: 0 4px;
+    z-index: 1;
+    min-height: 0;
+}
+
+.boardCardFooter > .iconContainer > .MuiSvgIcon-root {
+	color: #172b4d;
+	font-size: 22px;
+}
+
+.boardCardFooter > .iconContainer > h4 {
+	color: #172b4d;
+	font-size: 16px;
+}
