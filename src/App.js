@@ -33,7 +33,7 @@ function App() {
 				<BoardCard /> */}
 				{
 					boards.map( board => (
-						<BoardCard key={board.id} name={board.title} id={ board.id }/>
+						<BoardCard key={board.id} name={board.title} id={ board.id } lists={board}/>
 					))
 				}
 			</div>

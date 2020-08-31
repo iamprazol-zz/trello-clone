@@ -9,13 +9,33 @@ import db from '../../firebase'
 function BoardCard( {name, id}) {
 	const [title, setTitle] = useState(name);
 	const [edit, setEdit] = useState(false);
+	const [lists, setLists] = useState([]);
+	const [cards, setCards] = useState({ title: '' });
+	const [addCardClick, setAddCardClick] = useState(false);
 	const textInput = useRef('')
+	const cardTitleInput = useRef('')
+
+	useEffect(() => {
+		db.collection('boards').doc(id).collection('lists').onSnapshot( (snapshot) => (
+			setLists(
+				snapshot.docs.map( doc => ({
+					id: doc.id,
+					title: doc.data().title
+				}))
+			)
+		))
+	}, [])
 
 	useEffect(() => {
 		if( edit ){
 			textInput.current.focus();
 		}
-	}, [edit])
+
+		if( addCardClick ) {
+			cardTitleInput.current.focus();
+		}
+
+	}, [edit, addCardClick])
 
 	const saveTitle = e => {
 		if (e.type === "blur" || (e.type === "keypress" && e.key === "Enter")) {
@@ -26,6 +46,18 @@ function BoardCard( {name, id}) {
 			title: title
 		})
 	}
+
+	const openAddListCard = (e) => {
+
+		if (e.type === "blur" || (e.type === "keypress" && e.key === "Enter")) {
+			setAddCardClick( !addCardClick )
+
+			db.collection('boards').doc(id).collection('lists').add({
+				title: cards.title
+			})
+		}
+	}
+
 	return (
 		<div className="boardCard">
 			<div className="boardCardHeader">
@@ -58,12 +90,48 @@ function BoardCard( {name, id}) {
 				<IconContainer icon={<MoreHorizIcon />}/>
 			</div>
 			<div className="boardCardBody">
-				<ListCard />
-				<ListCard />
-				<ListCard />
+				{
+					lists.map( list => (
+						list ?
+							<ListCard name={list.title} key={list.id} id={list.id} />
+						:
+						''
+					)
+				)
+				}
+				{
+					addCardClick ?
+						<input
+							type="text"
+							value={cards.title}
+							onChange={ (e) => (
+								e.target.value ?
+									setCards({ title: e.target.value })
+								:
+								''
+							)}
+							onBlur={
+								openAddListCard
+							}
+							onKeyPress={
+								openAddListCard
+							}
+							ref={cardTitleInput}
+						/>
+					:
+					''
+				}
+
 			</div>
 			<div className="boardCardFooter">
-				<IconContainer icon={<AddMoreIcon />} text="Add another card" />
+				<div className="add__area" onClick={() => setAddCardClick( ! addCardClick )}>
+					<IconContainer
+						icon={
+						<AddMoreIcon />
+						}
+						text="Add another card"
+					/>
+				</div>
 			</div>
 		</div>
 	)
